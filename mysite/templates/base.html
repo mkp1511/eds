@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+
+  {% block title %}
+  {% endblock title %}
+
+  <link rel="stylesheet" href="{% static 'css/base.css' %}"/>
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="logo"><img src="{% static 'img/logo_vector_copy.svg' %}" width="200"/></div>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About US</a></li>
+
+      <li class="dropdown"><span>Services&#9662;</span>
+        <ul class="features-menu">
+          <li><a href="#">Desktop Solutions</a></li>
+          <li><a href="#">Cloud based Applications</a></li>
+          <li><a href="#">GIS based applications</a></li>
+          <li><a href="#">Data Science Solutions</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+    {% block images %}
+    {% endblock images %}
+
+  
+    {% block content %}
+    {% endblock content %}
+
+
+  <div class="footer">
+    <div class="logo"><img src="{% static 'img/logo_vector_copy.svg' %}" width="200"/></div>
+  </div>
+
+</body>
+
+</html>
+
+
+
+
+<!--
+  <div class="photo"><img src="images/laptop-in-empty-room.jpg" width="1200"/>
+    Photo by <a href="https://burst.shopify.com/@matthew_henry?utm_campaign=photo_credit&amp;utm_content=Free+Stock+Photo+of+Laptop+In+An+Empty+Room+%E2%80%94+HD+Images&amp;utm_medium=referral&amp;utm_source=credit">Matthew Henry</a> from <a href="https://burst.shopify.com/business?utm_campaign=photo_credit&amp;utm_content=Free+Stock+Photo+of+Laptop+In+An+Empty+Room+%E2%80%94+HD+Images&amp;utm_medium=referral&amp;utm_source=credit">Burst</a>
+  </div>
+
+  <div class="photo"><img src="images/business.jpg" width="1200"/>
+    Image by <a href="https://pixabay.com/users/Goumbik-3752482/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2717063">Goumbik</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2717063">Pixabay</a>
+  </div>
+
+  -->

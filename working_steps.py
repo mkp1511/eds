@@ -119,3 +119,137 @@ January 30, 2020 - 17:25:34
 Django version 3.0.2, using settings 'mysite.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
+
+
+(13) create .gitignore with the following entries
+*.pyc
+*~
+/.vscode
+__pycache__
+eds
+db.sqlite3
+/static
+
+
+(14)
+(eds) MK:edsystems purohit$ git init
+Initialized empty Git repository in /Users/purohit/projects/edsystems/.git/
+
+
+(15)
+(eds) MK:edsystems purohit$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	manage.py
+	mysite/
+	requirements.txt
+	working_steps.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+(16)
+(eds) MK:edsystems purohit$ git add -A
+
+
+(17)
+(eds) MK:edsystems purohit$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   .gitignore
+	new file:   manage.py
+	new file:   mysite/__init__.py
+	new file:   mysite/asgi.py
+	new file:   mysite/settings.py
+	new file:   mysite/urls.py
+	new file:   mysite/wsgi.py
+	new file:   requirements.txt
+	new file:   working_steps.py
+
+
+(18)
+(eds) MK:edsystems purohit$ git commit -m "initial commit"
+[master (root-commit) 49b36ab] initial commit
+ 9 files changed, 324 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100755 manage.py
+ create mode 100644 mysite/__init__.py
+ create mode 100644 mysite/asgi.py
+ create mode 100644 mysite/settings.py
+ create mode 100644 mysite/urls.py
+ create mode 100644 mysite/wsgi.py
+ create mode 100644 requirements.txt
+ create mode 100644 working_steps.py
+(eds) MK:edsystems purohit$ 
+
+
+
+(19)
+In the browser, login to github.com.
+We already have an account on github with the user name mkp1511.
+Create a new repository on github with the name 'eds'. 
+Leave the "initialize with a README" checkbox unchecked, leave the .gitignore option blank (we've done that manually) 
+and leave the License as None.
+
+
+(20) Push the repository through terminal
+(eds) MK:edsystems purohit$ git remote add origin https://github.com/mkp1511/eds.git
+(eds) MK:edsystems purohit$ git push -u origin master
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (12/12), 4.26 KiB | 2.13 MiB/s, done.
+Total 12 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/mkp1511/eds.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+(eds) MK:edsystems purohit$ 
+
+
+
+Static files include stuff like CSS, JavaScript and images that you may want to serve alongside your site. 
+Django is very opinionated about how you should include your static files.
+For now, let's add/edit some lines in the settings.py file at the end so that it looks like this.
+
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "mysite/assets")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+
+STATIC_URL = '/static/'
+This line tells Django to append static to the base url (in our case localhost:8000) when searching for static files. 
+
+In Django, you could have a static folder almost anywhere you want. You can even have more than one static folder 
+e.g. one in each app. However, to keep things simple, We will use just one static folder in the root of our project folder. 
+
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "mysite/assets")]
+The STATICFILES_DIRS tells Django where to look for static files that are not tied to a particular app. 
+In this case, we just told Django to also look for static files in a folder called assets in our mysite folder, 
+not just in our apps.
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+Django also provides a mechanism for collecting static files into one place so that they can be served easily. 
+Using the collectstatic command, Django looks for all static files in your apps and collects them wherever you told it to, 
+i.e. the STATIC_ROOT. In our case, we are telling Django that when we run python manage.py collectstatic, 
+gather all static files into a folder called staticfiles in our project root directory. 
+This feature is very handy for serving static files, especially in production settings.
+
+Inside this folder is where we will have any custom CSS and JS we choose to write. On that note, 
+let's add two folders inside the static folder to hold our files, one called css and the other called js. 
+Inside css, create a file called main.css. Add a main.js in the js folder as well. 
+Your static folder should now look like this:

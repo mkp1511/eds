@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 1200px;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: #04293B;
+}
+
+a:link, a:visited {
+  color: #04293B;
+  text-decoration: none;
+
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  background: #D6E9FE;
+  border-bottom: 1px solid #04293B;
+}
+
+.menu {
+  margin-top: 30px;
+}
+
+.menu > li{
+  display: inline;
+  margin-right: 50px;
+}
+
+.menu > li:last-of-type {
+  margin-right: 20;
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown:hover .features-menu {
+  display: flex;
+  flex-direction: column;
+  background: #B2D6FF;
+  border-radius: 5px;
+  padding-top: 60px;
+
+  position: absolute;
+  top: -25px;
+  left: -30px;
+}
+
+.features-menu li {
+  list-style: none;
+  border-bottom: 1px solid #fff;
+  padding: 0 20px 10px 20px;
+  margin: 10px;
+}
+
+.features-menu li:last-of-type {
+  border-bottom: none;
+}
+
+.dropdown > span {
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+}
+
+.features-menu {
+  z-index: 1;
+}
+
+.features-menu {
+  display: none;
+}
+
+.photo {
+ display: flex;
+ padding-top: 100px;
+}
+
+.business-photo {
+
+}
+
+.mkrain-photo {
+  display: flex;
+  flex-direction: column;
+}
+
+.analysis {
+  padding-top: 10px;
+}
+
+.dep-graph {
+  border-top: 1px solid #04293B;
+  border-bottom: 1px solid #04293B;
+  padding: 20px;
+}
+
+.prd-graph {
+  padding: 20px;
+}
+
+.content {
+  color:  blue;
+  text-align: center; 
+  width: 1450px;
+  margin: 20px;
+}
+
+.footer {
+  width: 1450px;
+  background-color: #04293B;
+  color: white;
+  text-align: center;
+}
+

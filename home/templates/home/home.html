@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+  {% block title %}
+  <title>EarthData Systems</title>
+  {% endblock title %}
+
+
+
+  {% block images %}
+    <div class="photo">
+      <div class="business-photo"><img src="{% static 'img/business.jpg' %}" width="1050"/></div>
+      <div class="mkrain-photo">
+        <div class="analysis"><img src="{% static 'img/p-analysis.png' %}" width="350"/></div>
+        <div class="dep-graph"><img src="{% static 'img/dep-graph.png' %}" width="350"/></div>
+        <div class="prd-graph"><img src="{% static 'img/prd-graph.png' %}" width="350"/></div>
+      </div>
+    </div>
+  {% endblock images %}
+  
+
+  {% block content %}
+    <div class="content">
+    <h4>Welcome to EarthData Systems </h4>
+    <p>We provide customised data solutions including GIS based visualisation products, web maps etc. 
+      for scientific/ Geodata.</p>
+          
+    </div>
+  {% endblock content  %}
+
