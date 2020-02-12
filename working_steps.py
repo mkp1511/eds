@@ -253,3 +253,14 @@ Inside this folder is where we will have any custom CSS and JS we choose to writ
 let's add two folders inside the static folder to hold our files, one called css and the other called js. 
 Inside css, create a file called main.css. Add a main.js in the js folder as well. 
 Your static folder should now look like this:
+
+
+
+
+
+
+
+
+username: edsystems
+e-mail: mahendra@edsystems.com
+password: eds1602wed
