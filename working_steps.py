@@ -264,3 +264,49 @@ Your static folder should now look like this:
 username: edsystems
 e-mail: mahendra@edsystems.com
 password: eds1602wed
+
+
+
+### for accessing the User model and assign a username to avariable from terminal
+(eds) MK:edsystems purohit$ python manage.py shell
+>>> from mysite import settings
+>>> from django.contrib.auth.models import User
+>>> User.objects.all()
+<QuerySet [<User: edsystems>]>
+>>> me = User.objects.get(username="edsystems")
+
+
+# important queries on a model
+# let model name be Post
+Post.objects.create(author=me, title='Sample title', text='Test')
+Post.objects.all()
+Post.objects.filter(author=me)
+Post.objects.filter(title__contains='title')
+Post.objects.filter(published_date__lte=timezone.now())
+Post.objects.get(title="Sample Title")   # output should be a single record
+Post.objects.order_by('created_date')
+Post.objects.order_by('-created_date')
+Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+
+
+# important imports
+
+# models
+from django.db import models
+from django.conf import settings
+from django.contrib.auth.models import User
+from django.utils import timezone
+
+# urls
+from django.contrib import admin
+from django.urls import path, include
+# in app url:  
+from django.urls import path
+from . import views
+
+
+# views
+from django.shortcuts import render
+from django.utils import timezone
+from .models import Post # Post is name of the model
+
