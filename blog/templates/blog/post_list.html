@@ -1,32 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'blog/blog.html' %}
 {% load static %}
 
-  {% block title %}
-  <title>Blog - EDSystems</title>
-  {% endblock title %}
+  
+{% block title %}
+<title>Blog Posts</title>
+{% endblock title %}
 
-
-
-  {% block content %}
-    
-  <div class="blog-content">
-    <div>
-    <h1><a href="">EarthData Systems - Blog</a></h1>
+{% block blog %}
+{% for post in posts %}
+<div class="post">
+    <div class="date">
+        <p>Published: {{ post.published_date }}</p>
     </div>
-    
-    <div>
-
-      {% for post in posts %}
-        <div>
-          <p>Published: {{ post.published_date }}</p>
-          <h2><a href="">{{ post.title }}</a></h2>
-          <p>{{ post.text | linebreaksbr }}</p>
-        </div>
-    
-      {% endfor %}
-    
-    </div>
-    
-
-    </div>
-  {% endblock content  %}
+    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+    <p>{{ post.text|linebreaksbr }}</p>
+</div>
+{% endfor %}
+{% endblock %}

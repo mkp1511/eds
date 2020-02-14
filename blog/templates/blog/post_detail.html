@@ -1,0 +1,21 @@
+{% extends 'blog/blog.html' %}
+{% load static %}
+
+{% block title %}
+<title>Blog Post-Detail</title>
+{% endblock title %}
+
+{% block blog %}
+
+    <div class="post">
+        {% if post.published_date %}
+        <div class="date">
+            <p>{{ post.published_date }}</p>
+        </div>
+        {% endif %}
+
+        <h2> {{ post.title }} </h2>
+        <p> {{ post.text | linebreaksbr }}</p>
+    </div>
+
+{% endblock blog %}

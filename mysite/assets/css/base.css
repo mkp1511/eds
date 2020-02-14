@@ -115,19 +115,21 @@ a:hover {
  }
  
  .home-content {
-  color: rgb(3, 18, 32); 
+  color: #484031; 
   width: 1440;
   padding-top: 40px;
   padding-bottom: 60px;
+  padding-left: 15px;
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
  .blog-content {
-   color: rgb(3, 18, 32);
+   color: #484031;
    width: 1440;
    padding-top: 150px;
    padding-bottom: 50px;
+   padding-left: 15px;
    font-size: 15px;
    font-family: Arial, Helvetica, sans-serif;
  }
@@ -148,3 +150,60 @@ a:hover {
    padding: 50px;
  }
  
+ .blog-content h1>a, .blog-content h2>a {
+   color: #C25100;
+   font-family: 'Lobster';
+ }
+
+ .blog-content .page-header {
+  background-color: #C25100;
+  margin-top: 0;
+  padding: 20px 20px 20px 40px;
+
+ }
+
+ 
+ .blog-content .page-header h1, 
+ .blog-content .page-header h1> a, 
+ .blog-content .page-header h1>a:visited, 
+ .blog-content .page-header h1>a:active {
+  color: #ffffff;
+  font-size: 36pt;
+  text-decoration: none;
+}
+
+
+.blog-content .content {
+  margin-left: 40px;
+}
+
+.blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4 {
+  font-family: 'Lobster', cursive;
+}
+
+.blog-content .date {
+  color: #828282;
+}
+
+.save {
+  float: right;
+}
+
+.post-form textarea, .post-form input {
+  width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+  color: #ffffff;
+  float: right;
+  font-size: 26pt;
+  margin-right: 20px;
+}
+
+.blog-content .post {
+  margin-bottom: 40px;
+}
+
+.blog-content .post h2>a, .blog-content .post h2>a:visited {
+  color: #000000;
+}
