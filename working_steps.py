@@ -284,6 +284,7 @@ Post.objects.filter(author=me)
 Post.objects.filter(title__contains='title')
 Post.objects.filter(published_date__lte=timezone.now())
 Post.objects.get(title="Sample Title")   # output should be a single record
+post = get_object_or_404(Post,pk=pk) # in case no object is returned
 Post.objects.order_by('created_date')
 Post.objects.order_by('-created_date')
 Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
@@ -306,7 +307,10 @@ from . import views
 
 
 # views
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post # Post is name of the model
+mrom .forms import PostForm # PostForm is the name of the form
 
+# forms
+from django import forms

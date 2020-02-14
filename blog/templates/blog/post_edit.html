@@ -1,0 +1,17 @@
+{% extends 'blog/blog.html' %}
+{% load static %}
+
+{% block title %}
+<title>Add/Edit BlogPost</title>
+{% endblock title %}
+
+{% block blog %}
+
+<h2>New Post</h2>
+<form method="POST" class = 'post-form'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Save</button>
+</form>
+
+{% endblock blog %}

@@ -167,6 +167,7 @@ a:hover {
  .blog-content .page-header h1> a, 
  .blog-content .page-header h1>a:visited, 
  .blog-content .page-header h1>a:active {
+  /*color: #c0910e; */
   color: #5e300b;
   font-size: 36pt;
   text-decoration: none;
@@ -194,7 +195,7 @@ a:hover {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-  color: #ffffff;
+  color: #5e300b;
   float: right;
   font-size: 26pt;
   margin-right: 20px;
