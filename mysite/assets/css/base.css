@@ -5,7 +5,7 @@
 }
 
 body {
-  width: 1200px;
+  width: 1425px;
   font-size: 18px;
   font-family: sans-serif;
   color: #04293B;
@@ -126,8 +126,8 @@ a:hover {
 
  .blog-content {
    color: #484031;
-   width: 1440;
-   padding-top: 150px;
+   width: 1500;
+   padding-top: 100px;
    padding-bottom: 50px;
    padding-left: 15px;
    font-size: 15px;
@@ -150,15 +150,15 @@ a:hover {
    padding: 50px;
  }
  
- .blog-content h1>a, .blog-content h2>a {
+ /* .blog-content h1>a, .blog-content h2>a {
    color: #C25100;
    font-family: 'Lobster';
- }
+ } */
 
  .blog-content .page-header {
-  background-color: #C25100;
+  background-color: rgb(150, 192, 226);
   margin-top: 0;
-  padding: 20px 20px 20px 40px;
+  padding: 20px 0 20px 40px;
 
  }
 
@@ -167,7 +167,7 @@ a:hover {
  .blog-content .page-header h1> a, 
  .blog-content .page-header h1>a:visited, 
  .blog-content .page-header h1>a:active {
-  color: #ffffff;
+  color: #5e300b;
   font-size: 36pt;
   text-decoration: none;
 }
